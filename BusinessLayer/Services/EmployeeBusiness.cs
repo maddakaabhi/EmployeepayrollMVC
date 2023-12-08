@@ -38,6 +38,11 @@ namespace BusinessLayer.Services
         {
             return repo.GetEmployee(id);
         }
-        
+        public EmployeeModel LoginEmployee(LoginModel login)
+        {
+            return repo.LoginEmployee(login);
+        }
+
+
     }
 }

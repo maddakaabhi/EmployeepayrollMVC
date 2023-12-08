@@ -9,6 +9,8 @@
 
 <p>
     <a asp-action="AddEmployee">Create New</a>
+    <br />
+    <a asp-action="LoginMethod">Login</a>
 </p>
 <table class="table">
     <thead>
@@ -50,7 +52,7 @@
                 @Html.DisplayFor(modelItem => item.name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.profileimage)
+                <img src=@Url.Content(item.profileimage) />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.gender)
@@ -68,11 +70,28 @@
                 @Html.DisplayFor(modelItem => item.notes)
             </td>
             <td>
+                
                     @Html.ActionLink("Edit", "EditEmployee", new {  id=item.employeeID}) |
                     @Html.ActionLink("Details", "GetEmployee", new { id=item.employeeID}) |
                     @Html.ActionLink("Delete", "DeleteEmployee", new { id=item.employeeID })
             </td>
         </tr>
+
+            
+
 }
     </tbody>
 </table>
+<ul>
+   @*  @foreach (var std in ViewData["students"] as IList<string>)
+    {
+        <li>
+            @std
+        </li>
+    } *@
+
+   @*  @foreach (int id in ViewData["Employee"]as IEnumerable<int>)
+    {
+        <li>@id</li>
+    } *@
+</ul>

@@ -25,7 +25,16 @@
             </div>
             <div class="form-group">
                 <label asp-for="profileimage" class="control-label"></label>
-                <input asp-for="profileimage" class="form-control" />
+                <br />  
+                @Html.RadioButtonFor(model => model.profileimage, "~/Assets/Ellipse_10.png")
+                <img src="~/Assets/Ellipse_10.png" />
+                @Html.RadioButtonFor(model => model.profileimage, "~/Assets/Ellipse_5.png")
+                <img src="~/Assets/Ellipse_5.png" />
+                @Html.RadioButtonFor(model => model.profileimage, "~/Assets/Ellipse_7.png")
+                <img src="~/Assets/Ellipse_7.png" />
+                @Html.RadioButtonFor(model => model.profileimage, "~/Assets/Ellipse_8.png")
+                <img src="~/Assets/Ellipse_8.png" />
+               <!-- <input asp-for="profileimage" class="form-control" /> -->
                 <span asp-validation-for="profileimage" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -38,7 +47,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="department" class="control-label"></label>
-                <input asp-for="department" class="form-control" />
+                <select asp-for="department" class="form-control" asp-items="new SelectList(ViewBag.Department)">
+                    </select>
+               <!-- <input asp-for="department" class="form-control" /> -->
                 <span asp-validation-for="department" class="text-danger"></span>
             </div>
             <div class="form-group">

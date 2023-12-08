@@ -7,21 +7,23 @@ namespace ModalLayer.Models
 {
     public class EmployeeModel
     {
-        [Required]
+        
         public int employeeID { get; set; }
-        [Required]
+        [Required(ErrorMessage ="{0} input must be given")]
+        [RegularExpression(@"[A-Z][a-z]+",ErrorMessage ="Enter valid Name")]
         public string name {  get; set; }
-        [Required]
+        [Required(ErrorMessage ="{0} input must be given")]
         public string profileimage {  get; set; }
-        [Required]
+        [Required(ErrorMessage = "{0} input must be given")]    
         public string gender { get; set; }
-        [Required]    
+        [Required(ErrorMessage = "{0} input must be given")]    
         public string department {  get; set; }
-        [Required]
+        [Required(ErrorMessage = "{0} input must be given")]
         public long salary {  get; set; }
-        [Required]
+        [Required(ErrorMessage = "{0} input must be given")]
         public DateTime StartDate { get; set; }
-        [Required]
+        [Required(ErrorMessage = "{0} input must be given")]
+        [StringLength(50,MinimumLength =5,ErrorMessage ="Mininum character 5 and Maximum character 50")]
         public string notes {  get; set; }
 
     }

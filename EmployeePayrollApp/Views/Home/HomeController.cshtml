@@ -33,6 +33,11 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+@* @foreach (int id in TempData["Employee"]as IEnumerable<int>)
+    {
+        <li>@id</li>
+    } *@
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

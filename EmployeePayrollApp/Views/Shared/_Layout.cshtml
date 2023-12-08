@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/css/AddEmp.css" />
 </head>
 <body>
-    <header>
+    @* <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EmployeePayrollApp</a>
@@ -29,6 +29,10 @@
                 </div>
             </div>
         </nav>
+    </header> *@
+
+    <header>
+        @Html.Partial("Interface1")
     </header>
     <div class="container">
         <main role="main" class="pb-3">

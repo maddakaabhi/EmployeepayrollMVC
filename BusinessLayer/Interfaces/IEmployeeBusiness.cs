@@ -10,5 +10,6 @@ namespace BusinessLayer.Interfaces
         void UpdateEmployee(EmployeeModel employee);
         void DeleteEmployee(int id);
        EmployeeModel GetEmployee(int id);
+        EmployeeModel LoginEmployee(LoginModel login);
     }
 }

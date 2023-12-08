@@ -130,8 +130,47 @@ namespace RepositoryLayer.Services
 
                 }
                 return employee;
+                con.Close ();
             }
 
+        }
+
+        public EmployeeModel LoginEmployee(LoginModel login)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("Sp_Login", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Id", login.EmployeeId);
+                cmd.Parameters.AddWithValue("@Name", login.LoginName);
+
+                con.Open();
+                EmployeeModel employee = new EmployeeModel();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    //employee.employeeID = reader.IsDBNull("EmployeeId") ? 0 : Convert.ToInt32(reader["EmployeeId"]);
+                    //employee.name = reader.IsDBNull("Name") ? null : reader["Name"].ToString();
+                    //employee.profileimage = reader.IsDBNull("ProfileImage") ? null : reader["ProfileImage"].ToString();
+                    //employee.gender = reader.IsDBNull("Gender") ? null : reader["Gender"].ToString();
+                    //employee.department = reader.IsDBNull("Department") ? null : reader["Department"].ToString();
+                    //employee.salary = reader.IsDBNull("Salary") ? 0 : Convert.ToInt32(reader["Salary"]);
+                    //employee.StartDate = reader.IsDBNull("StartDate") ? DateTime.Now : Convert.ToDateTime(reader["StartDate"]);
+                    //employee.notes = reader.IsDBNull("Notes") ? null : reader["Notes"].ToString();
+
+                    employee.employeeID = Convert.ToInt32(reader["EmployeeId"]);
+                    employee.name =  reader["Name"].ToString();
+                    employee.profileimage = reader["ProfileImage"].ToString();
+                    employee.gender =  reader["Gender"].ToString();
+                    employee.department =  reader["Department"].ToString();
+                    employee.salary = Convert.ToInt32(reader["Salary"]);
+                    employee.StartDate = Convert.ToDateTime(reader["StartDate"]);
+                    employee.notes =  reader["Notes"].ToString();
+                }
+                return employee;
+            }
         }
     }
 }
