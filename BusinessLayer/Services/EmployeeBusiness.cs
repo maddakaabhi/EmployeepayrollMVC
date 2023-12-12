@@ -43,6 +43,10 @@ namespace BusinessLayer.Services
             return repo.LoginEmployee(login);
         }
 
+        public IEnumerable<EmployeeModel> GetEmployeeByName(string name)
+        {
+            return repo.GetEmployeeByName(name);
+        }
 
     }
 }

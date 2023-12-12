@@ -133,3 +133,4 @@ C:\Users\abhil\source\repos\EmployeePayrollApp\EmployeePayrollApp\obj\Debug\netc
 C:\Users\abhil\source\repos\EmployeePayrollApp\EmployeePayrollApp\obj\Debug\netcoreapp3.1\Razor\Views\Employee\GetEmployee.cshtml.g.cs
 C:\Users\abhil\source\repos\EmployeePayrollApp\EmployeePayrollApp\obj\Debug\netcoreapp3.1\Razor\Views\Employee\LoginMethod.cshtml.g.cs
 C:\Users\abhil\source\repos\EmployeePayrollApp\EmployeePayrollApp\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Interface1.cshtml.g.cs
+C:\Users\abhil\source\repos\EmployeePayrollApp\EmployeePayrollApp\obj\Debug\netcoreapp3.1\Razor\Views\Employee\GetEmployeebyname.cshtml.g.cs

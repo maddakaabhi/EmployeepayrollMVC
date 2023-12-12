@@ -172,6 +172,37 @@ namespace RepositoryLayer.Services
                 return employee;
             }
         }
+
+        public IEnumerable<EmployeeModel> GetEmployeeByName(string name) 
+        {
+            List<EmployeeModel> employees = new List<EmployeeModel>();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+
+                SqlCommand cmd = new SqlCommand("Sp_GetName", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                cmd.Parameters.AddWithValue("@Name", name);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    EmployeeModel employee = new EmployeeModel();
+                    employee.employeeID = Convert.ToInt32(reader["EmployeeId"]);
+                    employee.name = reader.GetValue(1).ToString();
+                    employee.profileimage = reader.GetValue(2).ToString();
+                    employee.gender = reader.GetValue(3).ToString();
+                    employee.department = reader.GetValue(4).ToString();
+                    employee.salary = Convert.ToInt32(reader["Salary"]);
+                    employee.StartDate = Convert.ToDateTime(reader["StartDate"]);
+                    employee.notes = reader["Notes"].ToString();
+
+                    employees.Add(employee);
+                }
+                con.Close();
+            }
+            return employees;
+        }
     }
 }
 

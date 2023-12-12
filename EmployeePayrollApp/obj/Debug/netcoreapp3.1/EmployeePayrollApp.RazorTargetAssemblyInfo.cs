@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyProductAttribute("EmployeePayrollApp")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24f3405014c8fdf7aecab4e68936696e79096ccc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14903af597d5c358bf8d0630b96eeb60cd16699c")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EmployeePayrollApp.Views")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

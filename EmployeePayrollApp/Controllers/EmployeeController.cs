@@ -186,7 +186,8 @@ namespace EmployeePayrollApp.Controllers
                 if (ModelState.IsValid) {
                     EmployeeModel employee = business.LoginEmployee(login);
                     HttpContext.Session.SetInt32("EmpId", employee.employeeID);
-                    return RedirectToAction("GetEmployee");
+                    HttpContext.Session.SetString("EmpName", employee.name);
+                    return RedirectToAction("GetEmployeebyname");
                     //string url = "GetEmployee/" + employee.employeeID;
                     //return Redirect(url.ToString());
                     
@@ -199,6 +200,23 @@ namespace EmployeePayrollApp.Controllers
             }
 
         }
+
+        [HttpGet]
+        public IActionResult GetEmployeebyname(string name)
+        {
+            try
+            {
+                name = HttpContext.Session.GetString("EmpName");
+                var result = business.GetEmployeeByName(name);
+                return View(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        
 
     }
 }

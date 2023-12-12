@@ -11,5 +11,7 @@ namespace RepositoryLayer.Interfaces
         void DeleteEmployee(int id);
         EmployeeModel GetEmployee(int id);
         EmployeeModel LoginEmployee(LoginModel login);
+
+        IEnumerable<EmployeeModel> GetEmployeeByName(string name);
     }
 }
